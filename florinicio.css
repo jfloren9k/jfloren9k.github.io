@@ -1,0 +1,342 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: #080f1a;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.glass {
+    height: 480px; /* 60% del tamaño original */
+    width: 360px;  /* 60% del tamaño original */
+    background: #122139;
+    border-radius: 180px 180px 0px 0px;
+}
+
+.glass:before {
+    content: "";
+    height: 24px; /* 60% del tamaño original */
+    width: 24px;  /* 60% del tamaño original */
+    transform-origin: center;
+    border: 15px solid #122139;
+    border-radius: 100%;
+    position: absolute;
+    left: 154px; /* 60% del tamaño original */
+    top: -44px;  /* 60% del tamaño original */
+}
+
+.glass:after {
+    content: "";
+    position: absolute;
+    height: 9px;  /* 60% del tamaño original */
+    width: 360px; /* 60% del tamaño original */
+    background: #a52a2a;
+    top: 100%;
+    left: 0%;
+}
+
+.shine {
+    width: 16px;  /* 60% del tamaño original */
+    height: 198px; /* 60% del tamaño original */
+    background: white;
+    opacity: 0.2;
+    position: absolute;
+    left: 85%;
+    top: 120px; /* 60% del tamaño original */
+    border-radius: 100px;
+    z-index: 10;
+}
+
+.shine:before {
+    content: "";
+    width: 16px;  /* 60% del tamaño original */
+    height: 24px; /* 60% del tamaño original */
+    position: absolute;
+    background: white;
+    top: 219px; /* 60% del tamaño original */
+    border-radius: 100px;
+}
+
+.petals>div {
+    position: absolute;
+    background: #d52d58;
+    width: 51px;  /* 60% del tamaño original */
+    height: 72px;  /* 60% del tamaño original */
+    top: 120px;    /* 60% del tamaño original */
+    transition: all 0.5s ease-out;
+}
+
+.petals>div:nth-child(1) {
+    border-radius: 9px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, 1);  /* 60% del tamaño original */
+    left: 160px;  /* 60% del tamaño original */
+    top: 120px;   /* 60% del tamaño original */
+    background: #d52d58;
+}
+
+.petals>div:nth-child(2),
+.petals>div:nth-child(4),
+.petals>div:nth-child(6) {
+    background: #b81b43;
+    left: 138px; /* 60% del tamaño original */
+    border-radius: 0px 30px 0px 30px;
+    transform-origin: bottom right;
+}
+
+.petals>div:nth-child(3),
+.petals>div:nth-child(5),
+.petals>div:nth-child(7) {
+    background: #b81b43;
+    left: 180px; /* 60% del tamaño original */
+    border-radius: 30px 0px 30px 0px;
+    transform-origin: bottom left;
+}
+
+.petals>div:nth-child(2) {
+    z-index: 5;
+    background: #ab1a3f;
+    top: 130px;  /* 60% del tamaño original */
+    height: 78px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, .5); /* 60% del tamaño original */
+    animation: bloom2 3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.petals>div:nth-child(3) {
+    z-index: 4;
+    background: #ab1a3f;
+    top: 130px;  /* 60% del tamaño original */
+    height: 78px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, .5); /* 60% del tamaño original */
+    animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+.petals>div:nth-child(4) {
+    z-index: 3;
+    background: #b81b43;
+    top: 128px;  /* 60% del tamaño original */
+    height: 81px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, .5); /* 60% del tamaño original */
+    animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+.petals>div:nth-child(5) {
+    z-index: 2;
+    background: #b81b43;
+    top: 128px;  /* 60% del tamaño original */
+    height: 81px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, .5); /* 60% del tamaño original */
+    animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+.petals>div:nth-child(6) {
+    z-index: 1;
+    background: #c9204b;
+    top: 120px;   /* 60% del tamaño original */
+    height: 78px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, .3); /* 60% del tamaño original */
+    animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+.petals>div:nth-child(7) {
+    z-index: 0;
+    background: #c9204b;
+    top: 120px;   /* 60% del tamaño original */
+    height: 78px;  /* 60% del tamaño original */
+    box-shadow: 0px 0px 36px rgba(245, 148, 184, .3); /* 60% del tamaño original */
+    animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+.deadPetals>div {
+    position: absolute;
+    background: #d52d58;
+    width: 12px;  /* 60% del tamaño original */
+    height: 9px;  /* 60% del tamaño original */
+    top: 120px;    /* 60% del tamaño original */
+    border-radius: 0px 18px 0px 18px;
+    box-shadow: 0px 0px 18px rgba(245, 148, 184, .5);  /* 60% del tamaño original */
+    transition: all 0.5s ease-out;
+}
+
+.deadPetals>div:nth-child(1) {
+    left: 71539975992px;
+    transform: rotate(-30deg);
+    animation: falling 12s 4s ease-in-out infinite;
+}
+
+.deadPetals>div:nth-child(2) {
+    left: 15798650900px;
+    transform: rotate(-30deg);
+    animation: falling 12s 8s ease-in-out infinite;
+}
+
+.deadPetals>div:nth-child(3) {
+    left: 77875700191px;
+    transform: rotate(-30deg);
+    animation: falling 12s 12s ease-in-out infinite;
+}
+
+.deadPetals>div:nth-child(4) {
+    left: 59593789975px;
+    transform: rotate(-30deg);
+    animation: falling 12s 16s ease-in-out infinite;
+}
+
+.leaves>div:nth-last-child(1) {
+    position: absolute;
+    width: 33px;  /* 60% del tamaño original */
+    height: 18px;  /* 60% del tamaño original */
+    background: #338f37;
+    top: 200px;   /* 60% del tamaño original */
+    left: 167px;  /* 60% del tamaño original */
+    border-radius: 60px;
+}
+
+.leaves>div:nth-child(1) {
+    position: absolute;
+    width: 9px;   /* 60% del tamaño original */
+    height: 234px; /* 60% del tamaño original */
+    background: #054c05;
+    top: 185px;   /* 60% del tamaño original */
+    left: 180px;  /* 60% del tamaño original */
+    border-radius: 0 0 60px 60px;
+}
+
+.leaves>div:nth-child(2) {
+    position: absolute;
+    width: 36px;  /* 60% del tamaño original */
+    height: 60px;  /* 60% del tamaño original */
+    top: 32px;    /* 60% del tamaño original */
+    border-radius: 6px 48px 24px 48px;
+    background: #054c05;
+    transform-origin: bottom;
+    transform: rotate(-18deg);
+    top: 247px;   /* 60% del tamaño original */
+    left: 152px;  /* 60% del tamaño original */
+    box-shadow: inset 6px 6px #066406;
+}
+
+.leaves>div:nth-child(3) {
+    position: absolute;
+    width: 36px;  /* 60% del tamaño original */
+    height: 60px;  /* 60% del tamaño original */
+    top: 32px;    /* 60% del tamaño original */
+    border-radius: 48px 1px 48px 24px;
+    background: #054c05;
+    transform-origin: bottom;
+    transform: rotate(18deg);
+    top: 216px;   /* 60% del tamaño original */
+    left: 180px;  /* 60% del tamaño original */
+    box-shadow: inset -6px 6px #066406;
+}
+
+.thorns>div {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 120px;  /* 60% del tamaño original */
+}
+
+.thorns>div:nth-child(odd) {
+    border-top: 9px solid transparent;  /* 60% del tamaño original */
+    border-bottom: 9px solid transparent; /* 60% del tamaño original */
+    border-left: 9px solid #054c05;   /* 60% del tamaño original */
+    left: 189px;  /* 60% del tamaño original */
+}
+
+.thorns>div:nth-child(even) {
+    border-top: 9px solid transparent;  /* 60% del tamaño original */
+    border-bottom: 9px solid transparent; /* 60% del tamaño original */
+    border-right: 9px solid #054c05;  /* 60% del tamaño original */
+    left: 171px;  /* 60% del tamaño original */
+}
+
+.thorns>div:nth-child(1) {
+    top: 279px;   /* 60% del tamaño original */
+}
+
+.thorns>div:nth-child(2) {
+    top: 234px;   /* 60% del tamaño original */
+}
+
+.thorns>div:nth-child(4) {
+    top: 315px;   /* 60% del tamaño original */
+}
+
+@keyframes bloom2 {
+    50% {
+        transform: rotate(-54deg); /* 60% del tamaño original */
+        top: 240px;   /* 60% del tamaño original */
+        left: 90px;   /* 60% del tamaño original */
+    }
+
+    100% {
+        transform: rotate(-36deg); /* 60% del tamaño original */
+        top: 369px;   /* 60% del tamaño original */
+        left: 60px;   /* 60% del tamaño original */
+        background: #71122a;
+        box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+    }
+}
+
+@keyframes bloom3 {
+    100% {
+        transform: rotate(30deg); /* 60% del tamaño original */
+    }
+}
+
+@keyframes bloom4 {
+    100% {
+        transform: rotate(-15deg); /* 60% del tamaño original */
+    }
+}
+
+@keyframes bloom5 {
+    100% {
+        transform: rotate(15deg); /* 60% del tamaño original */
+    }
+}
+
+@keyframes bloom6 {
+    100% {
+        transform: rotate(-6deg); /* 60% del tamaño original */
+    }
+}
+
+@keyframes bloom7 {
+    100% {
+        transform: rotate(6deg); /* 60% del tamaño original */
+    }
+}
+
+@keyframes glowing {
+    50% {
+        background: #d7365f;
+        box-shadow: 0px 0px 36px rgba(245, 148, 184, 1); /* 60% del tamaño original */
+    }
+}
+
+@keyframes falling {
+    20% {
+        top: 201px;   /* 60% del tamaño original */
+        background: #9d193b;
+        box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+    }
+
+    100% {
+        top: 201px;   /* 60% del tamaño original */
+        opacity: 0;
+    }
+}
+
